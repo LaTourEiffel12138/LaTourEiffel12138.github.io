@@ -15,9 +15,11 @@
     <meta name="description" content="个人资料整理">
   
   
+    <meta name="keywords" content="spring 全家桶," />
+  
   <meta http-equiv="Cache-Control" content="no-transform" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
-  <title>归档 ~ • curtain •</title>
+  <title>轻松搞定Spring全家桶(初识篇) 一 ~ • curtain •</title>
   <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.10.0/css/all.min.css"  >
 <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css"  >
 <link rel="stylesheet" href="https://cdn.staticfile.org/mdbootstrap/4.8.7/css/mdb.min.css"  >
@@ -124,6 +126,17 @@
               
             </span>
             
+              <br>
+              <p class="mt-3">
+                <i class="far fa-calendar-alt"></i>
+                <span class="post-date">2020-07-13&nbsp;|&nbsp;</span>
+                <i class="far fa-chart-bar"></i>
+                <span class="post-count">1.2k</span>字&nbsp;|&nbsp;
+                <i class="far fa-clock"></i>
+                <span class="post-count">4</span>分钟
+                
+              </p>
+            
           </div>
           
             <div class="scroll-down-bar">
@@ -136,35 +149,162 @@
   </header>
   <main id="mainContent" class="rgba-black-slight">
     
-      <div class="container nopadding-md" style="padding-top:0.5rem;padding-bottom:0.5rem;">
-        <div class="py-5 z-depth-3" id="board">
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 6 篇文章</p>
-  <hr>
-  
-    
       
-      <p class="h5">1970</p>
-    
-    <a href="/1970/01/01/hello-world/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Hello World</span>
-      <span style="float: right;">01-01</span>
-    </a>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <h1 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h1><p>Spring Boot使得创建可以“直接运行”的独立的、生产级的基于Spring的应用程序变得很容易。</p>
+<p>我们对Spring平台和第三方库有自己的看法，这样您就可以从零开始。<br>大多数Spring引导应用程序需要最小的Spring配置</p>
+<p><img src="https://cdn.jsdelivr.net/gh/LaTourEiffel12138/picGo/img/other/20200713105248.png" srcset="/img/loading.gif" alt=""></p>
+<h1 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h1><p>创建独立的Spring应用程序</p>
+<p>直接嵌入Tomcat、Jetty或Undertow(不需要部署WAR文件)</p>
+<p>提供自以为是的“启动器”依赖关系来简化构建配置</p>
+<p>在可能的情况下自动配置Spring和第三方库</p>
+<p>提供可用于生产的特性，如度量、运行状况检查和外部化配置</p>
+<p>绝对不需要代码生成，也不需要XML配置</p>
+<blockquote>
+<p>Spring Boot 运用“约定优于配置”的思想，对使用 Spring Boot创建的工程，提供约定、缺省、默认的配置，去简化传统手动、一步一步配置的开发方式</p>
+<p>引用于：<a href="https://www.cnblogs.com/moonsoft/p/9229107.html" target="_blank" rel="noopener">https://www.cnblogs.com/moonsoft/p/9229107.html</a></p>
+</blockquote>
+<h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><h2 id="1-bean-工厂"><a href="#1-bean-工厂" class="headerlink" title="1. bean 工厂"></a>1. bean 工厂</h2><p>Spring中，存在一个 Bean工厂。我们把每一个java类当做是一个 bean（豌豆），Spring就可以当做是一个factory（工厂），bean factory（豌豆工厂）的功能就是专门生产bean的。也就是说：Spring 可以去生产类的对象，也即 实例化类对象（new 类名()）</p>
+<h2 id="2-IOC-DI-控制反转-依赖注入"><a href="#2-IOC-DI-控制反转-依赖注入" class="headerlink" title="2. IOC / DI  控制反转/依赖注入"></a>2. IOC / DI  控制反转/依赖注入</h2><p>从新建一个Dynamic Web project开始，在工程项目中，引入 最新版本的 Spring jar包，配置使用Spring，熟悉Spring框架在项目中，所起到的作用。重点学习了解IOC/DI，即“控制反转、依赖注入”</p>
+<p>简单的说清楚，IOC产生的原因，及解决的问题。</p>
+<p>在“三层结构”(表示层、业务逻辑层、数据访问层)架构开发中，层与层之间，类有调用依赖的关系</p>
+<p>表示层——&gt;业务逻辑层——&gt;数据访问层，表示层类中，需要调用业务逻辑层类的方法；业务逻辑层类中，需要调用数据访问层类的方法。</p>
+<p>以用户登录、注册、用户个人资料维护为例：设计3个类 UserController， UserService， UserDao ，分别对应“三层结构”的表示层、业务逻辑层、数据访问层。</p>
+<p>那么，在项目实际开发代码中，存在：</p>
+<p>表示层类 UserController 中，要引用 UserService：</p>
+<pre><code class="java">public Class UserController {
+  UserService userService = new UserService();
+}</code></pre>
+<p>发现 类与类之间，有很紧密的依赖关系，即：在代码里，一个类中，引用了另外一个类，并 new 了一个对象。</p>
+<p>这样，也就意味着有很强的耦合性。而这样，是不建议的。</p>
+<p>因为软件设计中，很强调的是设计出来的软件需要具有很好的“特性：“高内聚、松耦合”。</p>
+<p>为了解耦，降低这种很强的依赖性，Spring 框架中，设计出了 IOC。</p>
+<p>代码中，不去 维护类与类之间的依赖性，也即： UserController 中不去new UserService()</p>
+<p>而是去这样写：</p>
+<pre><code class="java">public Class UserController {
+  //UserService userService = new UserService();
+  UserService userService;
+}</code></pre>
+<p> 那么 实例化UserService，即 new UserService();在哪里操作？</p>
+<p>交给Spring 的bean工厂，去实例化。</p>
+<p>如何去实例化类对象，有哪些需要约定，这就需要一个 xml配置文件去记录。后来，可以使用annotation（注解）的方式去配置属性。</p>
+<p>spring配置文件：</p>
+<pre><code class="xml">&lt;bean id=&quot;cat&quot; class=&quot;test.spring.Cat&quot; scope=&quot;prototype&quot;&gt;
+ &lt;property name=&quot;name&quot; value=&quot;波斯猫&quot;&gt;&lt;/property&gt;
+ &lt;/bean&gt;</code></pre>
+<blockquote>
+<p>官方释义：IOC</p>
+<p><img src="https://cdn.jsdelivr.net/gh/LaTourEiffel12138/picGo/img/other/20200713120448.png" srcset="/img/loading.gif" alt=""></p>
+<p>IOC容器：beanFactory applicationContext</p>
+<p><img src="https://cdn.jsdelivr.net/gh/LaTourEiffel12138/picGo/img/other/20200713120653.png" srcset="/img/loading.gif" alt=""></p>
+</blockquote>
+<h2 id="3-AOP"><a href="#3-AOP" class="headerlink" title="3. AOP"></a>3. AOP</h2><p>面向切面编程，主要解决横切性的问题。</p>
+<p>什么是横切性的问题？比如开发中，有很多的类、很多的方法，类与类之间存在调用的依赖的关系，我们称之为“从上而下”的线性调用。在这些代码中，经常需要在很多位置，添加“打印日志”的代码。而这些，“打印日志”的代码，基本都是一样的，和“从上而下”的线性调用，没有什么直接的业务逻辑关系。我们可以称之为：横切到这个“从上而下”的线性中。就像一个“十字”、“垂直”、“正交”这样。</p>
+<p>除了“日志”属于横切性问题，“事务”也属于。</p>
+<p>AOP就是为了解决这种横切性的问题，通过配置，不让这些相同的代码，充斥在项目代码的各处。而是通过，很少的配置，把这些相似的横切性代码，配置到它们应该出现的位置</p>
+<h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><h2 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h2><p><img src="https://cdn.jsdelivr.net/gh/LaTourEiffel12138/picGo/img/other/20200713110553.png" srcset="/img/loading.gif" alt=""></p>
+<h2 id="体系"><a href="#体系" class="headerlink" title="体系"></a>体系</h2><p><img src="https://cdn.jsdelivr.net/gh/LaTourEiffel12138/picGo/img/other/20200713111308.png" srcset="/img/loading.gif" alt=""></p>
+<blockquote>
+<p>注：</p>
+<p>此片文章中，基础知识，目标标题中内容，摘自</p>
+<p><a href="https://www.cnblogs.com/moonsoft/p/9229107.html" target="_blank" rel="noopener">https://www.cnblogs.com/moonsoft/p/9229107.html</a></p>
+</blockquote>
+
+            <hr>
+          </div>
+          <br>
+          <div>
+            <div id="post-tag">
+              
+                <span>
+                  <i class="iconfont icon-inbox"></i>
+                  
+                    <a class="hover-with-bg" href="/categories/spring">spring</a>
+                    &nbsp;
+                  
+                </span>
+              
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/spring%20%E5%85%A8%E5%AE%B6%E6%A1%B6">spring 全家桶</a>
+                
+              </span>
+            </div>
+            
+              <div id="post-note">
+                <div><strong>本文作者：</strong><a href="/">• curtain •</a></div>
+                <div><strong>本文链接：</strong><a href="http://wgpcyh.cn/2020/07/13/%E8%BD%BB%E6%9D%BE%E6%90%9E%E5%AE%9ASpring%E5%85%A8%E5%AE%B6%E6%A1%B6(%E5%88%9D%E8%AF%86%E7%AF%87)%20%E4%B8%80/">http://wgpcyh.cn/2020/07/13/%E8%BD%BB%E6%9D%BE%E6%90%9E%E5%AE%9ASpring%E5%85%A8%E5%AE%B6%E6%A1%B6(%E5%88%9D%E8%AF%86%E7%AF%87)%20%E4%B8%80/</a></div>
+                <div><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</div>
+              </div>
+            
+            
+              <div id="post-nav" class="container">
+                  <div class="row">
+                    
+                    
+                      <a href="/2020/05/26/%E9%85%8D%E7%BD%AE%E6%B5%81%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1%E5%99%A8/" id="post-nav-next" class="col">
+                        <span class="post-nav-title">配置，搭建流媒体服务器</span>
+                        <i class="fas fa-arrow-right"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+            
+          </div>
+        </div>
+
+        <!-- custom -->
+        
+
+        <!-- Comments -->
+        <div class="col-lg-10 mx-auto nopadding-md">
+          <div class="container comments mx-auto" id="comments">
+            
+             <br><br>
+              
+              
+  <script defer src="https://utteranc.es/client.js"
+          repo="LaTourEiffel12138/hexoBlogtalks"
+          issue-term="pathname"
   
+          label="utterances"
+    
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+
+
+            
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+  </div>
+
+
+    </div>
+  </div>
 </div>
 
 
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
+
+
     
   </main>
   
@@ -306,6 +446,11 @@
   <script src="/js/lazyload.js" ></script>
 
 
+  
+    <script src="https://cdn.staticfile.org/tocbot/4.8.1/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
 <!-- Plugins -->
 
   <script src="/lib/prettify/prettify.min.js" ></script>
@@ -322,7 +467,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "归档&nbsp;",
+        "轻松搞定Spring全家桶(初识篇) 一&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
@@ -364,6 +509,20 @@
     }
   </script>
 
+
+  <script src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <script type="text/javascript">
+  /* Fancybox */
+  var setupFancybox = function () {
+    $("#post img:not(.no-zoom img, img[no-zoom])").each(function() {
+    var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      $(this).wrap(element);
+    });
+  };
+  setupFancybox();
+  </script>
 
 
 
