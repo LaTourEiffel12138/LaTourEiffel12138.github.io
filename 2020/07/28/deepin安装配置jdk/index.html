@@ -15,9 +15,11 @@
     <meta name="description" content="个人资料整理">
   
   
+    <meta name="keywords" content="linux," />
+  
   <meta http-equiv="Cache-Control" content="no-transform" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
-  <title>归档 ~ • curtain •</title>
+  <title>deepin安装配置jdk ~ • curtain •</title>
   <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.10.0/css/all.min.css"  >
 <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css"  >
 <link rel="stylesheet" href="https://cdn.staticfile.org/mdbootstrap/4.8.7/css/mdb.min.css"  >
@@ -124,6 +126,17 @@
               
             </span>
             
+              <br>
+              <p class="mt-3">
+                <i class="far fa-calendar-alt"></i>
+                <span class="post-date">2020-07-28&nbsp;|&nbsp;</span>
+                <i class="far fa-chart-bar"></i>
+                <span class="post-count">205</span>字&nbsp;|&nbsp;
+                <i class="far fa-clock"></i>
+                <span class="post-count">1</span>分钟
+                
+              </p>
+            
           </div>
           
             <div class="scroll-down-bar">
@@ -136,71 +149,136 @@
   </header>
   <main id="mainContent" class="rgba-black-slight">
     
-      <div class="container nopadding-md" style="padding-top:0.5rem;padding-bottom:0.5rem;">
-        <div class="py-5 z-depth-3" id="board">
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 8 篇文章</p>
-  <hr>
-  
-    
       
-      <p class="h5">2020</p>
-    
-    <a href="/2020/07/28/deepin%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEnginx/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">deepin安装配置nginx</span>
-      <span style="float: right;">07-28</span>
-    </a>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近总是在做运维的活，然后就一堆的安装配置，索性就记录一下，省的到处去看别人的帖子，避免浪费时间去踩坑</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>jdk 我选择的1.8的版本，下载链接太难搞，懒得注册Oracle，自备吧</p>
+<p>操作配置如下</p>
+<pre><code class="bash">sudo tar -zxvf jdkxxxxxx.gz
+
+sudo mv jdkxxx jdk
+
+## 这里我在.bashrc 和 /etc/profile 都有变更配置,内容一致,避免不必要的麻烦
+## 这里我只示例.bashrc
+
+sudo vim ~/.bashrc 
+
+##复制如下命令
+##java
+JAVA_HOME=/opt/jdk
+CLASSPATH=.:$JAVA_HOME/bin.tools.jar
+PATH=$JAVA_HOME/bin:$PATH
+
+export JAVA_HOME CLASSPATH PATH
+
+##wq! 退出编辑模式
+
+source ~/.bashrc</code></pre>
+<blockquote>
+<p>注: </p>
+<p>​    jdk 环境配置只写一个export 原因是可以不影响后续添加新的其他软件配置信息,类似与windows的环境变量配置方式</p>
+</blockquote>
+
+            <hr>
+          </div>
+          <br>
+          <div>
+            <div id="post-tag">
+              
+                <span>
+                  <i class="iconfont icon-inbox"></i>
+                  
+                    <a class="hover-with-bg" href="/categories/linuxAPP">linuxAPP</a>
+                    &nbsp;
+                  
+                </span>
+              
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/linux">linux</a>
+                
+              </span>
+            </div>
+            
+              <div id="post-note">
+                <div><strong>本文作者：</strong><a href="/">• curtain •</a></div>
+                <div><strong>本文链接：</strong><a href="http://wgpcyh.cn/2020/07/28/deepin%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEjdk/">http://wgpcyh.cn/2020/07/28/deepin%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEjdk/</a></div>
+                <div><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</div>
+              </div>
+            
+            
+              <div id="post-nav" class="container">
+                  <div class="row">
+                    
+                      <a href="/2020/07/28/deepin%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEnginx/" id="post-nav-prev" class="col">
+                        <i class="fas fa-arrow-left"></i>
+                        <span class="post-nav-title">deepin安装配置nginx</span>
+                      </a>
+                    
+                    
+                      <a href="/2020/07/13/%E8%BD%BB%E6%9D%BE%E6%90%9E%E5%AE%9ASpring%E5%85%A8%E5%AE%B6%E6%A1%B6(%E5%88%9D%E8%AF%86%E7%AF%87)%20%E4%B8%80/" id="post-nav-next" class="col">
+                        <span class="post-nav-title">轻松搞定Spring全家桶(初识篇) 一</span>
+                        <i class="fas fa-arrow-right"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+            
+          </div>
+        </div>
+
+        <!-- custom -->
+        
+
+        <!-- Comments -->
+        <div class="col-lg-10 mx-auto nopadding-md">
+          <div class="container comments mx-auto" id="comments">
+            
+             <br><br>
+              
+              
+  <script defer src="https://utteranc.es/client.js"
+          repo="LaTourEiffel12138/hexoBlogtalks"
+          issue-term="pathname"
   
+          label="utterances"
     
-    <a href="/2020/07/28/deepin%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEjdk/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">deepin安装配置jdk</span>
-      <span style="float: right;">07-28</span>
-    </a>
-  
-    
-    <a href="/2020/07/13/%E8%BD%BB%E6%9D%BE%E6%90%9E%E5%AE%9ASpring%E5%85%A8%E5%AE%B6%E6%A1%B6(%E5%88%9D%E8%AF%86%E7%AF%87)%20%E4%B8%80/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">轻松搞定Spring全家桶(初识篇) 一</span>
-      <span style="float: right;">07-13</span>
-    </a>
-  
-    
-    <a href="/2020/05/26/%E9%85%8D%E7%BD%AE%E6%B5%81%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">配置，搭建流媒体服务器</span>
-      <span style="float: right;">05-26</span>
-    </a>
-  
-    
-    <a href="/2020/05/19/leetCode%E5%88%9D%E7%BA%A7%E9%A2%98%E7%9B%AE-1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">leetCode初级题目:1.两数之和</span>
-      <span style="float: right;">05-19</span>
-    </a>
-  
-    
-    <a href="/2020/05/12/hexo%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">hexo安装配置</span>
-      <span style="float: right;">05-12</span>
-    </a>
-  
-    
-    <a href="/2020/05/12/Markdown%E8%AF%AD%E6%B3%95/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Markdown语法</span>
-      <span style="float: right;">05-12</span>
-    </a>
-  
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+
+
+            
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+  </div>
+
+
+    </div>
+  </div>
 </div>
 
 
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
+
+
     
   </main>
   
@@ -342,6 +420,11 @@
   <script src="/js/lazyload.js" ></script>
 
 
+  
+    <script src="https://cdn.staticfile.org/tocbot/4.8.1/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
 <!-- Plugins -->
 
   <script src="/lib/prettify/prettify.min.js" ></script>
@@ -358,7 +441,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "归档&nbsp;",
+        "deepin安装配置jdk&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
@@ -400,6 +483,20 @@
     }
   </script>
 
+
+  <script src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <script type="text/javascript">
+  /* Fancybox */
+  var setupFancybox = function () {
+    $("#post img:not(.no-zoom img, img[no-zoom])").each(function() {
+    var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      $(this).wrap(element);
+    });
+  };
+  setupFancybox();
+  </script>
 
 
 

@@ -149,6 +149,141 @@
     
       
       <div class="col-12 col-md-4 m-auto">
+        <a href="/2020/07/28/deepin%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEnginx/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/LaTourEiffel12138/picGo/img/home/20191210161526.webp" alt="deepin安装配置nginx" class="img-fluid rounded z-depth-3 index-thumbnails image_random">
+        </a>
+      </div>
+      
+      <div class="col-12 col-md-8 m-auto">
+    
+      <a href="/2020/07/28/deepin%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEnginx/" target="_self">
+        <p class="h4 index-header">deepin安装配置nginx</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">安装安装nginx 编译相关依赖库安装gcc g++的依赖库
+sudo apt-get install build-essential
+sudo apt-get install libtool
+安装pcre依赖库（http://www.pcre.org/）
+sudo apt-get install libpcre3 libpcre3-dev
+安装zlib依赖库（http://www.zlib.net）
+sudo apt-get install zlib1g-dev 
+安装SSL依赖库
+sudo apt-get install openssl
+nginx 下载nginx官方下载页面：http://nginx.org/en/download.htmlconfigure配置文件详解：http://nginx.org/en/docs/configure.html
+编译安装# 解压下载好的nginx 压缩包
+tar zxvf nginx-1.17.10.tar.gz
+
+# 返回nginx-1.17.10 解压目录，执行如下语句
+./configure --prefix=自定义路径/nginx
+
+</div>
+        </div>
+      </a>
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2020-07-28&nbsp;&nbsp;
+        
+        
+        <i class="far fa-chart-bar"></i>&nbsp;160字&nbsp;&nbsp;
+        <i class="far fa-clock"></i>&nbsp;1分钟&nbsp;&nbsp;
+        
+        
+          <i class="iconfont icon-inbox"></i>
+          
+            <a href="/categories/linuxAPP">linuxAPP</a>&nbsp;
+          &nbsp;
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/linux">linux</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2020/07/28/deepin%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEjdk/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/LaTourEiffel12138/picGo/img/home/20191210161526.webp" alt="deepin安装配置jdk" class="img-fluid rounded z-depth-3 index-thumbnails image_random">
+        </a>
+      </div>
+      
+      <div class="col-12 col-md-8 m-auto">
+    
+      <a href="/2020/07/28/deepin%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEjdk/" target="_self">
+        <p class="h4 index-header">deepin安装配置jdk</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">前言最近总是在做运维的活，然后就一堆的安装配置，索性就记录一下，省的到处去看别人的帖子，避免浪费时间去踩坑
+安装jdk 我选择的1.8的版本，下载链接太难搞，懒得注册Oracle，自备吧
+操作配置如下
+sudo tar -zxvf jdkxxxxxx.gz
+
+sudo mv jdkxxx jdk
+
+## 这里我在.bashrc 和 /etc/profile 都有变更配置,内容一致,避免不必要的麻烦
+## 这里我只示例.bashrc
+
+sudo vim ~/.bashrc 
+
+##复制如下命令
+##java
+JAVA_HOME=/opt/jdk
+CLASSPATH=.:$JAVA_HOME/bin.tools.jar
+PATH=$JAVA_HOME/bin:$PATH
+
+export JAVA_HOME CLASSPATH PATH
+
+##wq! 退出编辑模式
+
+source ~/.bashrc
+
+注: 
+​    jdk 环境配置只写一个export 原因是可以不影响后续添加新的其他软件配置信息,类似与windows的环境变量配置方式
+
+</div>
+        </div>
+      </a>
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2020-07-28&nbsp;&nbsp;
+        
+        
+        <i class="far fa-chart-bar"></i>&nbsp;205字&nbsp;&nbsp;
+        <i class="far fa-clock"></i>&nbsp;1分钟&nbsp;&nbsp;
+        
+        
+          <i class="iconfont icon-inbox"></i>
+          
+            <a href="/categories/linuxAPP">linuxAPP</a>&nbsp;
+          &nbsp;
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/linux">linux</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      
+      <div class="col-12 col-md-4 m-auto">
         <a href="/2020/07/13/%E8%BD%BB%E6%9D%BE%E6%90%9E%E5%AE%9ASpring%E5%85%A8%E5%AE%B6%E6%A1%B6(%E5%88%9D%E8%AF%86%E7%AF%87)%20%E4%B8%80/" target="_self">
           <img src="https://cdn.jsdelivr.net/gh/LaTourEiffel12138/picGo/img/home/20191210161526.webp" alt="轻松搞定Spring全家桶(初识篇) 一" class="img-fluid rounded z-depth-3 index-thumbnails image_random">
         </a>

@@ -4,6 +4,56 @@
   
   
   <entry>
+    <title>deepin安装配置nginx</title>
+    <link href="/2020/07/28/deepin%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEnginx/"/>
+    <url>/2020/07/28/deepin%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEnginx/</url>
+    
+    <content type="html"><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="安装nginx-编译相关依赖库"><a href="#安装nginx-编译相关依赖库" class="headerlink" title="安装nginx 编译相关依赖库"></a>安装nginx 编译相关依赖库</h2><p>安装gcc g++的依赖库</p><pre><code class="bash">sudo apt-get install build-essentialsudo apt-get install libtool</code></pre><p>安装pcre依赖库（<a href="http://www.pcre.org/）" target="_blank" rel="noopener">http://www.pcre.org/）</a></p><pre><code class="bash">sudo apt-get install libpcre3 libpcre3-dev</code></pre><p>安装zlib依赖库（<a href="http://www.zlib.net）" target="_blank" rel="noopener">http://www.zlib.net）</a></p><pre><code class="bash">sudo apt-get install zlib1g-dev </code></pre><p>安装SSL依赖库</p><pre><code class="bash">sudo apt-get install openssl</code></pre><h2 id="nginx-下载"><a href="#nginx-下载" class="headerlink" title="nginx 下载"></a>nginx 下载</h2><p>nginx官方下载页面：<a href="http://nginx.org/en/download.html" target="_blank" rel="noopener">http://nginx.org/en/download.html</a><br>configure配置文件详解：<a href="http://nginx.org/en/docs/configure.html" target="_blank" rel="noopener">http://nginx.org/en/docs/configure.html</a></p><h2 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h2><pre><code class="bash"># 解压下载好的nginx 压缩包tar zxvf nginx-1.17.10.tar.gz# 返回nginx-1.17.10 解压目录，执行如下语句./configure --prefix=自定义路径/nginx# 编译并安装make &amp;&amp; make install</code></pre>]]></content>
+    
+    
+    <categories>
+      
+      <category>linuxAPP</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>deepin安装配置jdk</title>
+    <link href="/2020/07/28/deepin%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEjdk/"/>
+    <url>/2020/07/28/deepin%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEjdk/</url>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近总是在做运维的活，然后就一堆的安装配置，索性就记录一下，省的到处去看别人的帖子，避免浪费时间去踩坑</p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>jdk 我选择的1.8的版本，下载链接太难搞，懒得注册Oracle，自备吧</p><p>操作配置如下</p><pre><code class="bash">sudo tar -zxvf jdkxxxxxx.gzsudo mv jdkxxx jdk## 这里我在.bashrc 和 /etc/profile 都有变更配置,内容一致,避免不必要的麻烦## 这里我只示例.bashrcsudo vim ~/.bashrc ##复制如下命令##javaJAVA_HOME=/opt/jdkCLASSPATH=.:$JAVA_HOME/bin.tools.jarPATH=$JAVA_HOME/bin:$PATHexport JAVA_HOME CLASSPATH PATH##wq! 退出编辑模式source ~/.bashrc</code></pre><blockquote><p>注: </p><p>​    jdk 环境配置只写一个export 原因是可以不影响后续添加新的其他软件配置信息,类似与windows的环境变量配置方式</p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>linuxAPP</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>轻松搞定Spring全家桶(初识篇) 一</title>
     <link href="/2020/07/13/%E8%BD%BB%E6%9D%BE%E6%90%9E%E5%AE%9ASpring%E5%85%A8%E5%AE%B6%E6%A1%B6(%E5%88%9D%E8%AF%86%E7%AF%87)%20%E4%B8%80/"/>
     <url>/2020/07/13/%E8%BD%BB%E6%9D%BE%E6%90%9E%E5%AE%9ASpring%E5%85%A8%E5%AE%B6%E6%A1%B6(%E5%88%9D%E8%AF%86%E7%AF%87)%20%E4%B8%80/</url>
