@@ -300,8 +300,8 @@ TreeSet&lt;String&gt; treeSet2 = new TreeSet&lt;&gt;((o1,o2)-&gt;o1.length()-o2.
       language: 'zh-CN',
       perPage: 15,
       pagerDirection: 'last',
-      createIssueManually: 'true',
-      distractionFreeMode: 'false'
+      createIssueManually: '',
+      distractionFreeMode: ''
     });
 
     gitalk.render('gitalk-container')
@@ -656,6 +656,28 @@ TreeSet&lt;String&gt; treeSet2 = new TreeSet&lt;&gt;((o1,o2)-&gt;o1.length()-o2.
     }();
   </script>
 
+
+  <script type="text/javascript">
+    /* 评论自动跳转 */
+    var jumpComments = function(){
+      if(window.location.hash){
+        var hash_decode = decodeURI(window.location.hash);
+        if(!$(hash_decode).length){
+          var checkExist = setInterval(function() {
+            if ($(hash_decode).length) {
+              clearInterval(checkExist);
+              setTimeout(function(){
+                $('html, body').animate({scrollTop: $(hash_decode).offset().top-90}, 1000);
+              }, 1500);
+            }
+          }, 100);
+        }
+      }
+    }
+    $(document).ready(function(){
+	    jumpComments();
+    });
+  </script>
 
 
   
